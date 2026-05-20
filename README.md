@@ -7,125 +7,126 @@ Generador de contraseñas seguras
 [![npm](https://img.shields.io/badge/npm-install%20required-orange?logo=npm)](https://www.npmjs.com/)
 
 
-<div class="md-render">
+## 🔐 PassWords — generador de contraseñas seguras
 
-  <h1>
-    <span>🔐</span> PassWords — generador de contraseñas seguras
-  </h1>
+**Módulo de código libre para la generación de contraseñas seguras desde la terminal.** Diseñado para uso interno de funcionarios. Permite configurar longitud, inclusión de símbolos y números.
 
-  <div class="badges">
-    <span class="badge badge-green">Node.js ≥ v16.0</span>
-    <span class="badge badge-gray">MIT License</span>
-    <span class="badge badge-blue">Open Source</span>
-    <span class="badge badge-amber">npm install requerido</span>
-  </div>
+## 📋 Requisitos previos
 
-  <div class="desc-block">
-    Módulo de código libre para la generación de contraseñas seguras desde la terminal. Diseñado para uso interno de funcionarios. Permite configurar longitud, inclusión de símbolos y números, y guardar las claves generadas en un archivo de texto.
-  </div>
+- Node.js versión `v16.0` o superior instalada en el sistema.
+- Conexión para la descarga inicial de dependencias (`npm install`).
 
-  <h2>📋 Requisitos previos</h2>
-  <ul>
-    <li>Node.js versión <code>v16.0</code> o superior instalada en el sistema.</li>
-    <li>Conexión para la descarga inicial de dependencias (<code>npm install</code>).</li>
-  </ul>
+## ⚙️ Instalación
 
-  <h2>⚙️ Instalación</h2>
-  <p>Clona el repositorio e instala las dependencias:</p>
+Clona el repositorio e instala las dependencias:
 
-  <div class="pre-header"><span>bash</span><button class="copy-btn" onclick="navigator.clipboard.writeText('git clone https://github.com/xxxxx/generador-pass-node.git\ncd generador-pass-node\nnpm install')">copiar</button></div>
-  <pre><span class="kw">git</span> clone https://github.com/xxxxx/generador-pass-node.git
-<span class="kw">cd</span> generador-pass-node
-<span class="kw">npm</span> install</pre>
+```bash
+git clone https://github.com/yospinamurillo/GeneradorPaswords.git
+cd GeneradorPaswords
+npm install
+```
 
-  <div class="tip-box">
-    <span class="tip-icon"><i class="ti ti-info-circle" aria-hidden="true"></i></span>
-    <span>El paso <code>npm install</code> es obligatorio. El programa usa la librería <code>chalk</code> para los colores en terminal y no funcionará sin ella.</span>
-  </div>
+> **ℹ️ Nota:** El paso `npm install` es obligatorio. El programa usa la librería `chalk` para los colores en terminal y no funcionará sin ella.
 
-  <h2>🚀 Uso básico</h2>
-  <p>Para ejecutar el generador con los valores por defecto:</p>
+## 🚀 Uso básico
 
-  <div class="pre-header"><span>bash</span></div>
-  <pre><span class="kw">npm</span> start</pre>
+Para ejecutar el generador con los valores por defecto:
 
-  <p>Para pasar parámetros personalizados:</p>
+```bash
+npm start
+```
 
-  <div class="pre-header"><span>bash</span></div>
-  <pre><span class="kw">npm</span> start <span class="flag">--</span> <span class="flag">--longitud</span>=12 <span class="flag">--simbolos</span>=false <span class="flag">--numeros</span>=true</pre>
+Para pasar parámetros personalizados:
 
-  <p>Salida esperada en terminal:</p>
-  <div class="output-box">
-    &gt; Tu nueva clave es: aB3dE8fG9hI1
-  </div>
+```bash
+npm start -- --longitud=12 --simbolos=false --numeros=true
+```
 
-  <h2>🛠️ Parámetros disponibles</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Parámetro</th>
-        <th>Tipo</th>
-        <th>Valor por defecto</th>
-        <th>Descripción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>--longitud</code></td>
-        <td><span class="type-pill">number</span></td>
-        <td><code>8</code></td>
-        <td>Longitud de la contraseña. Mínimo: 1, máximo: 64.</td>
-      </tr>
-      <tr>
-        <td><code>--simbolos</code></td>
-        <td><span class="type-pill">boolean</span></td>
-        <td><code>true</code></td>
-        <td>Incluir símbolos especiales (<code>!@#$%</code>, etc.) en la contraseña.</td>
-      </tr>
-      <tr>
-        <td><code>--numeros</code></td>
-        <td><span class="type-pill">boolean</span></td>
-        <td><code>true</code></td>
-        <td>Incluir dígitos numéricos en la contraseña.</td>
-      </tr>
-      <tr>
-        <td><code>--guardar</code></td>
-        <td><span class="type-pill">flag</span></td>
-        <td>—</td>
-        <td>Guarda la contraseña generada en el archivo <code>mis_claves.txt</code>.</td>
-      </tr>
-    </tbody>
-  </table>
+**Salida esperada en terminal:**
+```
+> Tu nueva clave es: aB3dE8fG9hI1
+```
 
-  <h2>💾 Guardar contraseñas en archivo</h2>
-  <p>Agrega la bandera <code>--guardar</code> al final del comando para que el programa cree (o actualice) el archivo <code>mis_claves.txt</code> con la contraseña generada:</p>
+## 🛠️ Parámetros disponibles
 
-  <div class="pre-header"><span>bash</span></div>
-  <pre><span class="kw">npm</span> start <span class="flag">--</span> <span class="flag">--longitud</span>=16 <span class="flag">--simbolos</span>=true <span class="flag">--guardar</span></pre>
+| Parámetro | Tipo | Valor por defecto | Descripción |
+|-----------|------|-------------------|-------------|
+| `--longitud` | number | `8` | Longitud de la contraseña. Mínimo: 1, máximo: 64. |
+| `--simbolos` | boolean | `true` | Incluir símbolos especiales (`!@#$%`, etc.) en la contraseña. |
+| `--numeros` | boolean | `true` | Incluir dígitos numéricos en la contraseña. |
+| `--guardar` | flag | — | Guarda la contraseña generada en el archivo `mis_claves.txt`. |
 
-  <div class="tip-box">
-    <span class="tip-icon"><i class="ti ti-file-text" aria-hidden="true"></i></span>
-    <span>El archivo <code>mis_claves.txt</code> se crea automáticamente en la raíz del proyecto. Cada ejecución con <code>--guardar</code> agrega la nueva contraseña al archivo.</span>
-  </div>
+## 💾 Guardar contraseñas en archivo
 
-  <h2>🧪 Scripts disponibles</h2>
-  <table>
-    <thead>
-      <tr><th>Comando</th><th>Descripción</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>npm start</code></td>
-        <td>Inicia el generador de contraseñas con los parámetros indicados.</td>
-      </tr>
-      <tr>
-        <td><code>npm run test</code></td>
-        <td>Ejecuta los scripts de seguridad: verifica que no se generen contraseñas repetidas.</td>
-      </tr>
-    </tbody>
-  </table>
+Agrega la bandera `--guardar` al final del comando para que el programa cree (o actualice) el archivo `mis_claves.txt` con la contraseña generada:
 
-  <h2>📄 Licencia</h2>
-  <p>Distribuido bajo la licencia <strong>MIT</strong>. Consulta el archivo <code>LICENSE</code> para más información.</p>
+```bash
+npm start -- --longitud=16 --simbolos=true --guardar
+```
 
-</div>
+> **📝 Información:** El archivo `mis_claves.txt` se crea automáticamente en la raíz del proyecto. Cada ejecución con `--guardar` agrega la nueva contraseña al archivo.
+
+## 📊 Flujo de funcionamiento
+
+```
+graph TD
+    A["🚀 Inicio del programa"] --> B["📥 Lectura de parámetros"]
+    B --> C{"¿Parámetros válidos?"}
+    C -->|No| D["⚠️ Mostrar error"]
+    D --> E["❌ Finalizar"]
+    C -->|Sí| F["🔧 Configurar opciones"]
+    F --> G["🎲 Generar contraseña"]
+    G --> H{"¿Incluir números?"}
+    H -->|Sí| I["➕ Añadir dígitos"]
+    H -->|No| J["➡️ Continuar"]
+    I --> K{"¿Incluir símbolos?"}
+    J --> K
+    K -->|Sí| L["🔣 Añadir símbolos"]
+    K -->|No| M["➡️ Continuar"]
+    L --> N["🔀 Mezclar caracteres"]
+    M --> N
+    N --> O["🖨️ Mostrar contraseña"]
+    O --> P{"¿Guardar en archivo?"}
+    P -->|Sí| Q["💾 Guardar en mis_claves.txt"]
+    P -->|No| R["✅ Finalizar"]
+    Q --> R
+```
+
+## 🏗️ Arquitectura del módulo
+
+```
+graph LR
+    subgraph "Entrada"
+        A["📥 CLI Arguments"]
+    end
+    
+    subgraph "Procesamiento"
+        B["⚙️ Validación"]
+        C["🔧 Configuración"]
+        D["🎲 Generador"]
+        E["🔀 Mezclador"]
+    end
+    
+    subgraph "Salida"
+        F["🖨️ Consola"]
+        G["💾 Archivo"]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    E --> G
+```
+
+## 🧪 Scripts disponibles
+
+| Comando | Descripción |
+|---------|-------------|
+| `npm start` | Inicia el generador de contraseñas con los parámetros indicados. |
+| `npm run test` | Ejecuta los scripts de seguridad: verifica que no se generen contraseñas repetidas. |
+
+## 📄 Licencia
+
+Distribuido bajo la licencia **MIT**. Consulta el archivo `LICENSE` para más información.
